@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check whether the first number in the array is prime or not</title>
+   
+</head>
+<body>
+
+    <h1>Check whether the first number in the array is prime or not</h1>
+    <p>question:Write a JavaScript function to get an array and to read the first element of an array. Check whether it is prime or not. </p>
+    <p>To check wheather the first element in the array is prime or not, you have to form the array first.
+        type elements of array and press "add element" button.continue the process until all the elements are entered.
+        then press "check" button to check whether the first element in the array is prime or not.
+    </p>
+
+    <input type="number" id="text1"></input>
+<input type="button" id="button1" value="Add element" onclick="add_element_to_array();"></input>
+<div id="Result"></div> 
+
+<input type="button" id="button2" value="check" onclick="prime();"></input>
+    <p id="res"></p>
+
+
+<script>
+    var x = 0;
+    var array = Array();
+    
+function add_element_to_array()
+{
+    array[x] = document.getElementById("text1").value;
+ alert("Element: " + array[x] + " Added at index " + x);
+ x++;
+
+ document.getElementById("text1").value = "";
+ var e = " ";   
+    
+   for (var y=0; y<array.length; y++)
+   {
+     e += array[y] +" ";
+   }
+   document.getElementById("Result").innerHTML = "array = {"+ e +"}";
+}
+
+function prime()
+    {
+        array[x] = document.getElementById("text1").value;
+        var  n = array[0];
+        
+        var i;
+        flag = 0;
+        if(n ==1)
+                    {
+                        document.getElementById("res").innerHTML ="first element in the array ("+n+") is neither a prime number nor a composite number";
+                        return false;
+                    }
+        else if(n ==2)
+                    {
+                        document.getElementById("res").innerHTML ="first element in the array ("+n+") is a prime number";
+                        return false;
+                    }
+        else
+            {
+                for(i = 2; i <n; i++)
+                 {
+                
+                 if(n%i === 0) 
+                    {
+                        flag = 1;
+				        break;
+                    }
+                 }
+                 if(flag==1)
+                    {
+                        document.getElementById("res").innerHTML ="first element in the array ("+n+") is not a prime number";
+                        return false;
+                    }
+                 else
+                    {
+                    document.getElementById("res").innerHTML = "first element in the array("+n+") is a prime number";
+                        return true;
+                    }
+                
+            }
+    }
+  
+</script>
+    
+</body>
+</html>

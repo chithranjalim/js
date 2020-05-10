@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of squares of elements of array</title>
+
+</head>
+<body>
+
+    <h1>sum of squares of elements of array</h1>
+    <p>question:Write a JavaScript program to find the sum of squares of the elements of an array.</p>
+    <p>first you have to form the array .type elements of array and press "add elements" button.continue the process until all the elements are entered.
+       press "sum of squares of elements" button to get sum of squares of elements in the array
+    </p>
+
+    <input type="number" id="text1"></input>
+<input type="button" id="button1" value="Add elements" onclick="add_element_to_array();"></input>
+<p id="Result"></p>
+
+<input type="button" id="button2" value="sum of squares of elements" onclick="sum_sq();"></input>
+    <p id="res"></p>
+
+    <script>
+    var x = 0;
+    var array = Array();
+    
+function add_element_to_array()
+{
+    array[x] = document.getElementById("text1").value;
+ x++;
+
+ document.getElementById("text1").value = "";
+ var e = " ";   
+    
+   for (var y=0; y<array.length; y++)
+   {
+     e += array[y] +" ";
+   }
+   document.getElementById("Result").innerHTML = "array = {"+ e +"}";
+}
+        function sum_sq() {
+            array[x] = document.getElementById("text1").value;
+  var sum = 0; 
+   
+    for(var i=0;i<array.length;i++) 
+  {
+   sum += Math.pow(array[i], 2);
+
+}
+
+document.getElementById("res").innerHTML = sum;
+        } 
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JS truncates a string</title>
+</head>
+<body>
+        <h1>JS truncates a string</h1>
+        <p>question: Write a JavaScript function to truncate a string if it is longer than the specified number of characters.</p>
+        <p>go to console to see the result!</p>
+    <script>
+        text_truncate = function(str, length, ending) {
+            ending == '...'
+    if (length == null) {
+      length = 100;
+    }
+    if (ending == null) {
+      ending = '...';
+    }
+    if (str.length > length) {
+      return str.substring(0, length - ending.length) + ending;
+    } else {
+      return str;
+    }
+  };
+console.log(text_truncate('We are doing JS string exercises.'))
+console.log(text_truncate('We are doing JS string exercises.',18))
+console.log(text_truncate('We are doing JS string exercises.',15,'!!'))
+
+    </script>
+</body>
+</html>

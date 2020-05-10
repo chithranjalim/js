@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset=utf-8 />
+<title>find the largest integers</title>
+</head>
+<body>
+      <h1>find the largest integers </h1>
+      <p>question: Write a JavaScript program that accept two integers and display the largest</p>
+      <br>
+      <p>result:</p>
+
+    <p id="Result"></p>
+  <script>
+      var num1, num2;
+num1 = window.prompt("Input the First integer", "0");
+num2 = window.prompt("Input the second integer", "0");
+                                                 
+if(parseInt(num1, 10) > parseInt(num2, 10)) 
+  { 
+    document.getElementById("Result").innerHTML ="The larger of "+ num1+ " and "+ num2+ " is "+ num1+ ".";
+  }   
+else
+  if(parseInt(num2, 10) > parseInt(num1, 10)) 
+  {
+    document.getElementById("Result").innerHTML ="The larger of "+ num1+" and "+ num2+ " is "+ num2+ ".";
+  }                  
+else
+  {
+    document.getElementById("Result").innerHTML ="The values "+ num1+ " and "+num2+ " are equal.";
+  }
+  
+  </script>
+</body>
+</html>

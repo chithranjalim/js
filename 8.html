@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrange the array elements in alphabetical order</title>
+</head>
+<body>
+      <h1>arrange the array elements in alphabetical order</h1>
+      <p>Write a JavaScript program using for…in to read the objects from an array entered by an user and to arrange it in alphabetical order.</p>
+      <p> first you have to form the array . type elements of array in the text box, and press "add element" button.
+        continue the process until all the elements are entered.press "arrange in alphabetical Order" button to sort in alphabetical order.</p>
+
+    <input type="text" id="text1"></input>
+<input type="button" id="button1" value="Add element" onclick="add_element_to_array();"></input>
+<p id="Result"></p> 
+
+<input type="button" id="button2" value="arrange in alphabetical Order" onclick="alp();"></input>
+    <p id="res"></p>
+    
+    <script>
+    var x = 0;
+    var array = Array();
+    
+function add_element_to_array()
+{
+    array[x] = document.getElementById("text1").value;
+ x++;
+
+ document.getElementById("text1").value = "";
+ var e = " ";   
+    
+   for (var y=0; y<array.length; y++)
+   {
+     e += array[y] +" ";
+   }
+   document.getElementById("Result").innerHTML = "array = {"+ e +"}";
+}
+
+function alp()
+{
+  array[x] = document.getElementById("text1").value;
+
+ 
+  array.sort(function (a, b) {
+    if (a < b) {
+        return -1;
+    }
+    if (b < a) {
+        return 1;
+    }
+    return 0;
+});
+console.log(array);
+  document.getElementById("res").innerHTML ="alphabetically sorted array={"+ array+" }";
+  
+}
+
+    </script>
+</body>
+</html>
